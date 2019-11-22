@@ -1,0 +1,79 @@
+{% load static %}
+
+<html>
+<head>
+<title>Result</title>
+<style>
+ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: black;
+}
+
+
+
+.taskbar{
+ display: inline-block;
+ color: white;
+ text-align: center;
+ padding:20px;
+ font-size:25px;
+ text-decoration: none;
+ font-family: LemonMilk
+}
+
+
+
+li a:hover {
+ background-color: #111;
+}
+
+@font-face {
+ font-family: LemonMilk;
+ src: url({% static 'sentimental/LemonMilk.otf' %});
+}
+
+@font-face {
+ font-family: Quantify;
+ src: url({% static 'sentimental/Quantify.ttf' %});
+}
+
+.bgimg{
+   background-image: url({% static 'sentimental/bgimg.png' %});
+   background-size: cover;
+}
+</style>
+</head>
+<body  class="bgimg">
+  <div>
+  <ul style="padding:20px">
+    <li >                            <a style="float:left;align-self:bottom;"  href="{% url 'home1' %}" class="taskbar" >Home</a></li>
+    <li >                            <a style="float:left"  href="#news" class="taskbar ">Applications</a></li>
+    <li style="position:absolute;left:45%;font-family:Quantify;font-size:50px" class="taskbar ">Quantify</li>
+    <li >                            <a style="float:right" href="#contact"  class="taskbar ">Contact</a></li>
+    <li >                            <a style="float:right" href="#about" class="taskbar " >About</a></li>
+  </ul>
+  </div>
+
+<div>
+  <br>
+  <br>
+  <br>
+  <center>
+<form class="search" action="{% url 'submit1' %}" method="get">
+    <label for="search"> </label>
+  <input type="search" placeholder="Try movies, books, products ... " name="search" required>
+  <button type="submit"> Search </button>
+</form>
+  </center>
+</div>
+
+
+<br>
+<br>
+<br>
+
+</body>
+</html>
